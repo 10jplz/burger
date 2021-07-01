@@ -30,7 +30,7 @@ const orm = {
         console.log(queryString);
         connection.query(queryString, (err, result) => {
             if (err) {
-                trow err; 
+                throw err; 
             }
             cb(result)
         })
