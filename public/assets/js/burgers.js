@@ -3,6 +3,32 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.info('Dom loaded');
     }
 
+    const devourBtns = document.querySelectorAll('.devour');
+
+    if(devourBtns) {
+        devourBtns.forEach((button) => {
+            button.addEventListener('click', (e) => {
+
+                const id = e.target.getAttribute('data-id');
+
+                fetch(`/api/burgers/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+
+                    body: JSON.stringify()
+                })
+                .then(function () {
+                    console.log("Success")
+                    window.location.reload()
+                })
+                .catch((err) => console.log(err))
+            })
+        })
+    }
+
 
 
 
