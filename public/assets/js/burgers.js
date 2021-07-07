@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             e.preventDefault();
 
             const newBurger = {
-                name: document.getElementById('ca').nodeValue.trim()
+                name: document.getElementById('ca').value.trim()
             };
 
             fetch('/api/cats', {

@@ -1,9 +1,8 @@
-const { create } = require('express-handlebars');
 const connection = require('./connection');
 
 
 const orm = {
-    all(tableInput, cb) {
+    selectAll(tableInput, cb) {
         const queryString = `SELECT * FROM ${tableInput};`;
         connection.query(queryString, (err, result) => {
             if(err) {
@@ -13,7 +12,7 @@ const orm = {
         });
     },
 
-    create(table, data, cb) {
+    insertOne(table, data, cb) {
         let queryString = `INSERT INTO ?? SET ?`;
         console.log(queryString);
         connection.query(queryString, vals, (err, result) => {
