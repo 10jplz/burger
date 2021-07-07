@@ -41,8 +41,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const newBurger = {
                 name: document.getElementById('ca').value.trim()
             };
+            console.log("Adding Burger form", newBurger)
 
-            fetch('/api/cats', {
+            fetch('/api/burgers', {
                 method: 'POST', 
                 headers: {
                     Accept: 'application/json',

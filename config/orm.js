@@ -2,7 +2,7 @@ const connection = require('./connection');
 
 
 const orm = {
-    selectAll(tableInput, cb) {
+    all(tableInput, cb) {
         const queryString = `SELECT * FROM ${tableInput};`;
         connection.query(queryString, (err, result) => {
             if(err) {
@@ -12,10 +12,10 @@ const orm = {
         });
     },
 
-    insertOne(table, data, cb) {
-        let queryString = `INSERT INTO ?? SET ?`;
+    create(table, data, cb) {
+        let queryString = `INSERT INTO ?? SET burger_name = ?`;
         console.log(queryString);
-        connection.query(queryString, vals, (err, result) => {
+        connection.query(queryString, [table, data], (err, result) => {
             if (err) {
                 throw err; 
             }

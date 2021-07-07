@@ -5,7 +5,7 @@ const burger = {
             orm.all('burgers', (res) => cb(res));
         },
         
-        insertOne(cols, vals, cb) {
+        create(cols, vals, cb) {
             orm.insertOne('burgers', cols, vals, (res) => cb(res));
         }, 
         update(objColVals, condition, cb) {

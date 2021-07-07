@@ -4,18 +4,19 @@ const router = express.Router();
 const burger = require('../models/burger.js');
 
 router.get('/', (req, res) => {
-    burger.selectAll((data) => {
+    burger.all((data) => {
         const hbsObject = {
             burgers: data, 
 
         };
-        console.log(hbsObject);
+        console.log("controller",  hbsObject);
         res.render('index', hbsObject);
     });
 });
 
 router.post =('/api/burgers', (req, res) => {
-    burger.insertOne(req.body, (result) => {
+    console.log("Adding Burger", req.body)
+    burger.create(req.body, (result) => {
         res.json({ id: result.insertId })
     });
 });
