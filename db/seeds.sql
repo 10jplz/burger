@@ -1,4 +1,4 @@
 
-INSERT INTO burgers (burger_name) VALUES ("JALAPEÑO BURGER");
-INSERT INTO burgers (burger_name) VALUES ("APOLLO BURGER");
-INSERT INTO burgers (burger_name) VALUE ("BIG MAC");
+INSERT INTO burgers (name) VALUES ("JALAPEÑO BURGER");
+INSERT INTO burgers (name) VALUES ("APOLLO BURGER");
+INSERT INTO burgers (name) VALUES ("BIG MAC");
