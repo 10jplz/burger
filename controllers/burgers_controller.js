@@ -24,7 +24,7 @@ router.post('/api/burgers', (req, res) => {
 router.put('/api/burgers/:id', (req, res) => {
     burger.update(
         
-        { devoured: req.body.devoured}, 
+        { devoured: true}, 
         { id: req.params.id},
         (result) => {
             if (result.changeRows === 0 ) {

@@ -28,7 +28,7 @@ const orm = {
     update(table, id, cb) {
         let queryString = `UPDATE ?? SET devoured = 1  WHERE ?`;
         console.log(queryString);
-        connection.query(queryString, [table, id] (err, result) => {
+        connection.query(queryString, [table, id], (err, result) => {
             if (err) {
                 throw err; 
             }

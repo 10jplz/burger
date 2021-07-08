@@ -2,32 +2,30 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (event) {
         console.info('Dom loaded');
     }
+    console.log(document.getElementsByClassName('changeEaten'))
 
-    const devourBtns = document.querySelectorAll('.devour');
+    document.getElementById('devour').addEventListener('click', (e) => {
+        
+        if (e.target.matches("button") ){
 
-    if(devourBtns) {
-        devourBtns.forEach((button) => {
-            button.addEventListener('click', (e) => {
+        const id = e.target.getAttribute('data-id');
+        console.log(id)
 
-                const id = e.target.getAttribute('data-id');
+        fetch(`/api/burgers/${id}`, {
+            method: 'PUT',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
 
-                fetch(`/api/burgers/${id}`, {
-                    method: 'PUT',
-                    headers: {
-                        Accept: 'application/json',
-                        'Content-Type': 'application/json',
-                    },
-
-                    body: JSON.stringify()
-                })
-                .then(function () {
-                    console.log("Success")
-                    window.location.reload()
-                })
-                .catch((err) => console.log(err))
-            })
         })
-    }
+            .then(function () {
+                console.log("Success")
+                window.location.reload()
+            })
+            .catch((err) => console.log(err))
+        }
+    })
 
 
 
@@ -39,12 +37,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
             e.preventDefault();
 
             const newBurger = {
-                name: document.getElementById('ca').value.trim()
+                name: document.getElementById('ca').value.trim(),
+                devoured: false
             };
             console.log("Adding Burger form", newBurger)
 
             fetch('/api/burgers', {
-                method: 'POST', 
+                method: 'POST',
                 headers: {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',

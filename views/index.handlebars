@@ -2,13 +2,13 @@
 
 <h2>All Burgers</h2>
 
-<ul>
+<ul id="devour">
     {{#each burgers}}
-    {{!-- {{#unless devoured }} --}}
+    {{#unless devoured }}
     <li>
-        {{name}}
+        {{name}} <button class="changeEaten btn-sm bg-dark text-white" data-id="{{id}}" data-newEat="{{devour}}" type="submit">Eat It!</button>
     </li>
-    {{!-- {{/unless}} --}}
+    {{/unless}}
     {{/each}}
 </ul>
 
