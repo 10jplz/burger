@@ -46,7 +46,7 @@
   ## How to Contact Developer
 
 
-  Please see my [GitHub profile](https://github.com/10jplz@gmail.com)
+  Please see my [GitHub profile](https://github.com/10jplz)
   You can also email me questions at: 10jplz@gmail.com
 
 
