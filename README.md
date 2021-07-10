@@ -2,6 +2,8 @@
   [![License](https://img.shields.io/badge/License-MIT-yellow.svg)]
   ----
   # Jose's Burger Joint
+  ![Alt text](https://raw.githubusercontent.com/10jplz/burger/main/resources/Burgers.png)
+
 
   ## Description 
 
